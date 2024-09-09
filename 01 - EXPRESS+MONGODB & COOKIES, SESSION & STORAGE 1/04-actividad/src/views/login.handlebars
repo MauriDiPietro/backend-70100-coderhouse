@@ -1,0 +1,15 @@
+<form action="/user" method="post">
+    name:
+    <input type="text" name="name">
+    email:
+    <input type="text" name="email">
+    <input type="submit" value="SET-COOKIE">
+</form>
+<button id="get-cookie" >GET-COOKIE</button>
+
+<script>
+    document.getElementById('get-cookie').addEventListener('click', ()=>{
+        console.log(document.cookie)
+        fetch('http://localhost:8080/user/get-cookie')
+    })
+</script>
