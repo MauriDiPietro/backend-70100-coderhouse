@@ -3,7 +3,7 @@ import ProductDaoMongo from "./mongodb/product.dao.js";
 import UserDaoFS from "./filesystem/user.dao.js";
 import UserDaoMongo from "./mongodb/user.dao.js";
 import CartDaoMongo from "./mongodb/cart.dao.js";
-import { ConnectMongoDB, initMongoDB } from "../db/connection.js";
+import { ConnectMongoDB } from "../db/connection.js";
 
 let userDao = null;
 let prodDao = null;
