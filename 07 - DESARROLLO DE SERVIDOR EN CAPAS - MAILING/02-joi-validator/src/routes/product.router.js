@@ -15,7 +15,7 @@ router.get('/',
 router.get('/:id', controller.getProdById);
 
 router.post('/', 
-    [passportCall('current'), checkAdmin], 
+    // [passportCall('current'), checkAdmin], 
     controller.create);
 
 router.put('/:id', [passportCall('current'), checkAdmin], controller.update);

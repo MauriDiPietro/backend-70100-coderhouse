@@ -6,20 +6,10 @@ import "./passport/jwt.js";
 import { errorHandler } from "./middlewares/errorHandler.js";
 import MainRouter from "./routes/index.js";
 const mainRouter = new MainRouter();
-import cors from "cors";
 
 const app = express();
 
 app
-  .use(
-    cors({
-      origin: "http://localhost:5173"
-      // methods: "GET"
-      // methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-      // preflightContinue: false,
-      // optionsSuccessStatus: 204,
-    })
-  )
   .use(json())
   .use(urlencoded({ extended: true }))
   .use(morgan("dev"))

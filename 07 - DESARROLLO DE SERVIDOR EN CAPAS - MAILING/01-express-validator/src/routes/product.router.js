@@ -2,6 +2,7 @@ import { Router } from 'express';
 import ProductController from '../controllers/product.controllers.js';
 import { checkAdmin } from '../middlewares/checkAdmin.js';
 import { passportCall } from '../passport/passportCall.js';
+import { productValidatorParams } from '../middlewares/validators/product.validator.js';
 const controller = new ProductController();
 
 const router = Router();
@@ -12,10 +13,10 @@ router.get('/',
 
 // router.get('/:id', [passportCall('current')], controller.getById);
 
-router.get('/:id', controller.getProdById);
+router.get('/:id', [productValidatorParams], controller.getProdById);
 
 router.post('/', 
-    [passportCall('current'), checkAdmin], 
+    // [passportCall('current'), checkAdmin], 
     controller.create);
 
 router.put('/:id', [passportCall('current'), checkAdmin], controller.update);
